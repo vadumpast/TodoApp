@@ -1,4 +1,6 @@
 package com.example.todoapp.model.entity.api
 
-class UserCredentials {
-}
+data class UserCredentials(
+    var email: String,
+    var password: String
+)

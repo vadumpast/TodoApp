@@ -2,7 +2,9 @@ package com.example.todoapp.model.api
 
 import com.example.todoapp.model.entity.api.UserCredentials
 import com.example.todoapp.model.entity.api.UserInfo
-import retrofit2.http.POST
+import okhttp3.ResponseBody
+import retrofit2.Call
+import retrofit2.http.*
 
 interface ApiService {
 
@@ -10,6 +12,7 @@ interface ApiService {
     fun registerUser(userInfo: UserInfo)
 
     @POST(Api.LOGIN)
-    fun login(userCredentials: UserCredentials)
-
+    fun login(
+        @Body userCredentials: UserCredentials
+    ) : Call<ResponseBody>
 }
