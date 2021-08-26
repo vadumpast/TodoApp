@@ -10,7 +10,10 @@ import androidx.viewbinding.ViewBinding
 
 abstract class BaseFragment<VB: ViewBinding>: Fragment(), BaseContract {
 
-    private var viewBinding: ViewBinding? = null
+    private var viewBinding: VB? = null
+
+    val binding: VB
+        get() = viewBinding ?: throw Exception("Binding is not created")
 
     override fun onCreateView(
         inflater: LayoutInflater,
