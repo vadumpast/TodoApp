@@ -31,22 +31,11 @@ object ApiModule {
     }
 
     @Provides
-    fun provideRxCallAdapterFactory(): RxJava2CallAdapterFactory = RxJava2CallAdapterFactory.create()
-
-    @Provides
-    fun provideConverterFactory(): GsonConverterFactory = GsonConverterFactory.create()
-
-    @Provides
-    fun provideRetrofit(
-        okHttpClient: OkHttpClient,
-        converterFactory: GsonConverterFactory,
-        callAdapterFactory: RxJava2CallAdapterFactory
-    ): Retrofit {
+    fun provideRetrofit(okHttpClient: OkHttpClient, ): Retrofit {
         return Retrofit.Builder()
             .baseUrl(Api.BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
             .client(okHttpClient)
-            .addConverterFactory(converterFactory)
-            .addCallAdapterFactory(callAdapterFactory)
             .build()
     }
 
@@ -54,4 +43,5 @@ object ApiModule {
     fun provideApiService(retrofit: Retrofit): ApiService {
         return retrofit.create(ApiService::class.java)
     }
+
 }

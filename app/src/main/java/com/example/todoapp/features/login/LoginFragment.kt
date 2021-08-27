@@ -2,13 +2,19 @@ package com.example.todoapp.features.login
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import com.example.todoapp.R
+import androidx.navigation.fragment.findNavController
 import com.example.todoapp.base.BaseFragment
 import com.example.todoapp.databinding.FragmentLoginBinding
+import com.example.todoapp.features.home.HomeFragment
+import com.example.todoapp.features.register.RegisterFragment
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class LoginFragment: BaseFragment<FragmentLoginBinding>(), LoginContract {
 
-    private val presenter by lazy { LoginPresenter() }
+    @Inject
+    lateinit var presenter: LoginPresenter
 
     override fun createViewBinding(
         inflater: LayoutInflater,
@@ -25,6 +31,10 @@ class LoginFragment: BaseFragment<FragmentLoginBinding>(), LoginContract {
         initListeners()
     }
 
+    /**
+     * Contract
+     */
+
     override fun getEmail(): String {
         return binding.editEmailLogin.text.toString()
     }
@@ -33,11 +43,23 @@ class LoginFragment: BaseFragment<FragmentLoginBinding>(), LoginContract {
         return binding.editPasswordLogin.text.toString()
     }
 
+    override fun openRegisterFragment() {
+        RegisterFragment.start(findNavController())
+    }
+
+    override fun openHomeFragment() {
+        HomeFragment.start(findNavController())
+    }
+
+    /**
+     * Help fun-s
+     */
+
     private fun initListeners(){
         binding.btnLogin.setOnClickListener {
             presenter.onButtonLoginClicked()
         }
-        binding.btnNoAccountLogin.setOnClickListener {
+        binding.layoutNoAccountLogin.setOnClickListener {
             presenter.onButtonNoAccountClicked()
         }
     }

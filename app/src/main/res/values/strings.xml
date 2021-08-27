@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">TodoApp</string>
+    
+    <string name="name">name</string>
+    <string name="email">Email</string>
+    <string name="password">password</string>
+    <string name="age">age</string>
+
+    <string name="welcome_login_first">Hey there,</string>
+    <string name="welcome_login_second">Welcome Back</string>
+    <string name="no_account">Don’t have an account yet?</string>
+    <string name="register">Register</string>
+
 </resources>

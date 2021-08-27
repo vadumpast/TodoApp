@@ -8,4 +8,7 @@ interface LoginContract: BaseContract {
 
     fun getPassword(): String
 
+    fun openRegisterFragment()
+
+    fun openHomeFragment()
 }

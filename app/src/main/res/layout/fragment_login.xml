@@ -5,46 +5,152 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/edit_email_login"
+    <TextView
+        android:id="@+id/tv_welcome_first_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toTopOf="@+id/edit_password_login"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="@string/welcome_login_first"
+        android:textColor="@color/dark"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_welcome_second_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <EditText
-        android:id="@+id/edit_password_login"
+    <TextView
+        android:id="@+id/tv_welcome_second_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPassword"
+        android:layout_marginBottom="64dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/welcome_login_second"
+        android:textColor="@color/dark"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/edit_background"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_email_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="10dp"
+            app:srcCompat="@drawable/icon_email" />
+
+        <EditText
+            android:id="@+id/edit_email_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="#00FFFFFF"
+            android:ems="10"
+            android:fontFamily="@font/poppins_regular"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/gray"
+            android:textColorHighlight="#FFFFFF"
+            android:textColorLink="#00FFFFFF" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/edit_background"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <Button
+        <ImageView
+            android:id="@+id/iv_password_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="10dp"
+            app:srcCompat="@drawable/icon_lock" />
+
+        <EditText
+            android:id="@+id/edit_password_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="#00FFFFFF"
+            android:ems="10"
+            android:fontFamily="@font/poppins_regular"
+            android:hint="@string/password"
+            android:inputType="textWebPassword"
+            android:textColorHighlight="#FFFFFF"
+            android:textColorHint="@color/gray"
+            android:textColorLink="#00FFFFFF" />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_login"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Button"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/btn_background"
+        android:fontFamily="@font/poppins_bold"
+        android:text="login"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_password_login" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
-    <TextView
-        android:id="@+id/btn_no_account_login"
+    <LinearLayout
+        android:id="@+id/layout_no_account_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="TextView"
+        android:gravity="center"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_login">
+
+        <TextView
+            android:id="@+id/tv_no_account_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:gravity="center_vertical|end"
+            android:text="@string/no_account"
+            android:textColor="@color/dark" />
+
+        <TextView
+            android:id="@+id/tv_register_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="start|center_vertical"
+            android:text="@string/register"
+            android:textColor="@color/highlight" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
