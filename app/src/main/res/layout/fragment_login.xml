@@ -27,12 +27,12 @@
         android:text="@string/welcome_login_second"
         android:textColor="@color/dark"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
+        android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -41,7 +41,7 @@
         android:background="@drawable/edit_background"
         android:gravity="center"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
@@ -64,13 +64,12 @@
             android:fontFamily="@font/poppins_regular"
             android:hint="@string/email"
             android:inputType="textEmailAddress"
-            android:textColor="@color/gray"
-            android:textColorHighlight="#FFFFFF"
-            android:textColorLink="#00FFFFFF" />
+            android:textColor="@color/dark"
+            android:textColorHighlight="@color/gray" />
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/linearLayout2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -102,9 +101,8 @@
             android:fontFamily="@font/poppins_regular"
             android:hint="@string/password"
             android:inputType="textWebPassword"
-            android:textColorHighlight="#FFFFFF"
-            android:textColorHint="@color/gray"
-            android:textColorLink="#00FFFFFF" />
+            android:textColor="@color/dark"
+            android:textColorHint="@color/gray" />
     </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatButton
@@ -116,12 +114,11 @@
         android:layout_marginEnd="32dp"
         android:background="@drawable/btn_background"
         android:fontFamily="@font/poppins_bold"
-        android:text="login"
+        android:text="@string/login"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
     <LinearLayout
         android:id="@+id/layout_no_account_login"

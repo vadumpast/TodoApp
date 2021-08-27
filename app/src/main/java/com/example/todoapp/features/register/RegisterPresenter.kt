@@ -1,6 +1,8 @@
 package com.example.todoapp.features.register
 
 import android.util.Log
+import android.widget.Toast
+import com.example.todoapp.app.App
 import com.example.todoapp.base.BasePresenter
 import com.example.todoapp.model.api.ApiService
 import com.example.todoapp.model.entity.api.ApiResponse
@@ -34,6 +36,13 @@ class RegisterPresenter @Inject constructor(private val apiService: ApiService):
                 Log.d("tagg", "updatedAt - " + body?.user?.updatedAt.toString())
                 Log.d("tagg", "v - " + body?.user?.v.toString())
                 Log.d("tagg", "token - " + body?.token.toString())
+
+                if(body?.token.isNullOrEmpty()){
+                    Toast.makeText(App.context, "ERROR!", Toast.LENGTH_SHORT).show()
+                }else {
+                    Toast.makeText(App.context, "SUCCESS!", Toast.LENGTH_SHORT).show()
+                    rootView?.openHomeFragment()
+                }
             }
 
             override fun onFailure(call: Call<ApiResponse>, t: Throwable) {

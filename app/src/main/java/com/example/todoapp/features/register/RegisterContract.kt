@@ -12,4 +12,6 @@ interface RegisterContract: BaseContract {
 
     fun getAge(): String
 
+    fun openHomeFragment()
+
 }

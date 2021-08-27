@@ -5,5 +5,6 @@ object Api {
     const val BASE_URL = "https://api-nodejs-todolist.herokuapp.com/"
     const val REGISTER_USER = "user/register"
     const val LOGIN = "user/login"
+    const val LOGIN_BY_TOKEN = "user/me"
 
 }

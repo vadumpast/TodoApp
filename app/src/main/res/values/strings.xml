@@ -10,5 +10,9 @@
     <string name="welcome_login_second">Welcome Back</string>
     <string name="no_account">Don’t have an account yet?</string>
     <string name="register">Register</string>
+    <string name="login">Login</string>
+    <string name="create_an_account">Create an Account</string>
+    <string name="incorrect_data">data is incorrect!</string>
+    <string name="connection_error">connection error!</string>
 
 </resources>

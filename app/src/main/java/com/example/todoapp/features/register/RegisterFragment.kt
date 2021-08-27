@@ -3,9 +3,11 @@ package com.example.todoapp.features.register
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.NavController
+import androidx.navigation.fragment.findNavController
 import com.example.todoapp.R
 import com.example.todoapp.base.BaseFragment
 import com.example.todoapp.databinding.FragmentRegisterBinding
+import com.example.todoapp.features.home.HomeFragment
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -35,19 +37,23 @@ class RegisterFragment: BaseFragment<FragmentRegisterBinding>(), RegisterContrac
      */
 
     override fun getName(): String {
-        return binding.editName.text.toString()
+        return binding.editNameRegister.text.toString()
     }
 
     override fun getEmail(): String {
-        return binding.editEmail.text.toString()
+        return binding.editEmailRegister.text.toString()
     }
 
     override fun getPassword(): String {
-        return binding.editPassword.text.toString()
+        return binding.editPasswordRegister.text.toString()
     }
 
     override fun getAge(): String {
-        return binding.editAge.text.toString()
+        return binding.editAgeRegister.text.toString()
+    }
+
+    override fun openHomeFragment() {
+        HomeFragment.start(findNavController())
     }
 
     /**
