@@ -9,9 +9,11 @@ import retrofit2.http.*
 
 interface ApiService {
 
+    @Headers("Content-Type: application/json")
     @POST(Api.REGISTER_USER)
     fun register(@Body data: RegisterData): Call<ApiResponse>
 
+    @Headers("Content-Type: application/json")
     @POST(Api.LOGIN)
     fun login(@Body data: LoginData): Call<ApiResponse>
 

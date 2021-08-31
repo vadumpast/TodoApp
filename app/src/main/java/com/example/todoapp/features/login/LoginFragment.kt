@@ -59,7 +59,7 @@ class LoginFragment: BaseFragment<FragmentLoginBinding>(), LoginContract {
         binding.btnLogin.setOnClickListener {
             presenter.onButtonLoginClicked()
         }
-        binding.layoutNoAccountLogin.setOnClickListener {
+        binding.tvRegisterLogin.setOnClickListener {
             presenter.onButtonNoAccountClicked()
         }
     }
